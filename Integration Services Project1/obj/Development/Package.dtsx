@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{C9B99CF6-E0ED-41A6-A8C5-20828C4D18C6}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{37616B50-64E2-48D3-BFE6-EC8DECAC573F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -54,6 +54,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Desktop\кдз2 уд\Managers.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 10]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{88C129BA-4F46-4E16-8969-D8246961EC9F}"
+      DTS:ObjectName="Excel Connection Manager 10">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\кдз2 уд\exel\AwardsPlayers.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -2148,6 +2158,230 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Загрузка наград"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{127ECB0F-17DF-49D0-B327-EAA3BE386555}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Загрузка наград"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Загрузка наград\Выгрузка наград"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Источник &quot;Excel&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник &quot;Excel&quot;"
+              name="Выгрузка наград"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставление между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Загрузка наград\Выгрузка наград.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 10]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 10]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;]"
+                  name="Выход источника &quot;Excel&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[playerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[playerID]"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[playerID]"
+                      name="playerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[yearID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[yearID]"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[yearID]"
+                      name="yearID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[lgID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[lgID]"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[lgID]"
+                      name="lgID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[tie]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[tie]"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[tie]"
+                      name="tie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[notes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[notes]"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[notes]"
+                      name="notes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[awardID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[awardID]"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].Columns[awardID]"
+                      name="awardID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[playerID]"
+                      dataType="wstr"
+                      length="255"
+                      name="playerID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[awardID]"
+                      dataType="wstr"
+                      length="255"
+                      name="awardID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[yearID]"
+                      dataType="wstr"
+                      length="255"
+                      name="yearID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[lgID]"
+                      dataType="wstr"
+                      length="255"
+                      name="lgID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[tie]"
+                      dataType="wstr"
+                      length="255"
+                      name="tie" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[notes]"
+                      dataType="wstr"
+                      length="255"
+                      name="notes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;Excel&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[playerID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[playerID]"
+                      name="playerID" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[yearID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[yearID]"
+                      name="yearID" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[lgID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[lgID]"
+                      name="lgID" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[tie]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[tie]"
+                      name="tie" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[notes]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[notes]"
+                      name="notes" />
+                    <outputColumn
+                      refId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[awardID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка наград\Выгрузка наград.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[awardID]"
+                      name="awardID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Задача &quot;Выполнение SQL&quot;"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Задача &quot;Выполнение SQL&quot;"
@@ -2176,11 +2410,19 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{9269BAB0-B77F-4C90-A25E-00B6F71ADD20}"
-      DTS:From="Package\Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{0D04EEE7-D603-4A06-A3A8-6B09ED3C8A1A}"
+      DTS:From="Package\Загрузка игроков"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Загрузка команд" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{BF1E2723-5F71-4D38-8D83-01EB186ADB14}"
+      DTS:From="Package\Загрузка команд"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Загрузка наград" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2201,33 +2443,27 @@
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Загрузка игроков"
-          TopLeft="34.9999994784593,94.8999983030558" />
+          TopLeft="33.7499994970857,70.633332070311" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="244.416664574295,64.0666665581862">
+          TopLeft="140.416664574295,35.0666665581862">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-127.416665095836,30.8333317448696"
+              EndConnector="-24.6666650772093,35.5666655121247"
               Start="0,0"
-              End="-127.416665095836,23.3333317448696">
+              End="-24.6666650772093,28.0666655121247">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.4166658724348" />
+                    End="-20.6666650772093,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.4166658724348"
-                    Point2="0,15.4166658724348"
-                    Point3="-4,15.4166658724348" />
+                    Point1="-20.6666650772093,0"
+                    Point2="-24.6666650772093,0"
+                    Point3="-24.6666650772093,4" />
                   <mssgle:LineSegment
-                    End="-123.416665095836,15.4166658724348" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-123.416665095836,15.4166658724348"
-                    Point2="-127.416665095836,15.4166658724348"
-                    Point3="-127.416665095836,19.4166658724348" />
-                  <mssgle:LineSegment
-                    End="-127.416665095836,23.3333317448696" />
+                    End="-24.6666650772093,28.0666655121247" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2239,33 +2475,59 @@
         <NodeLayout
           Size="161.333333333334,42.6666666666667"
           Id="Package\Загрузка команд"
-          TopLeft="236.58333014821,94.3333317448696" />
+          TopLeft="42.8333330353102,135.499997675419" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="277.749997907628,64.0666665581862">
+          TopLeft="33.7499994970857,91.9666654036443">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="39.4999989072485,30.2666651866834"
+              EndConnector="9.08333353822442,64.866665605108"
               Start="0,0"
-              End="39.4999989072485,22.7666651866834">
+              End="1.58333353822442,64.866665605108">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.24529202209327" />
+                    End="-18.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.24529202209327"
-                    Point2="0,12.2452920220933"
-                    Point3="4,12.2452920220933" />
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
                   <mssgle:LineSegment
-                    End="35.4999989072485,12.2452920220933" />
+                    End="-22.5,60.866665605108" />
                   <mssgle:CubicBezierSegment
-                    Point1="35.4999989072485,12.2452920220933"
-                    Point2="39.4999989072485,12.2452920220933"
-                    Point3="39.4999989072485,16.2452920220933" />
+                    Point1="-22.5,60.866665605108"
+                    Point2="-22.5,64.866665605108"
+                    Point3="-18.5,64.866665605108" />
                   <mssgle:LineSegment
-                    End="39.4999989072485,22.7666651866834" />
+                    End="1.58333353822442,64.866665605108" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\Загрузка наград"
+          TopLeft="50.4999993294477,202.366663551728" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="126.666666182379,178.166664342086">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.1999992096424"
+              Start="0,0"
+              End="0,16.6999992096424">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6999992096424" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2481,6 +2743,31 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Загрузка команд\Загрузка команд">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Загрузка наград">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Загрузка наград\Выгрузка наград"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Загрузка наград\Выгрузка наград">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
