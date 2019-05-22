@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{8353D9E4-23AA-4D60-834C-68D267418C91}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{C9B99CF6-E0ED-41A6-A8C5-20828C4D18C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,16 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{BCBEC6B9-7534-42A9-A9CD-D063C82C91E8}"
       DTS:ObjectName="DESKTOP-4O8VT08.baseball_star">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-4O8VT08;Initial Catalog=baseball_star;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-4O8VT08.baseball_star 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A8ABE54F-B840-4BA1-BC58-14E5A51D3EFA}"
+      DTS:ObjectName="DESKTOP-4O8VT08.baseball_star 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=DESKTOP-4O8VT08;Initial Catalog=baseball_star;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
@@ -91,6 +101,36 @@
       DTS:CreationName="EXCEL"
       DTS:DTSID="{4244E9B7-099E-48D5-B413-4F24FA2AD183}"
       DTS:ObjectName="Excel Connection Manager 6">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\кдз2 уд\exel\Teams.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 7]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{BC8BDF2A-ECC4-4451-9E32-1C471AF2D320}"
+      DTS:ObjectName="Excel Connection Manager 7">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\кдз2 уд\exel\Teams.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 8]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{A51AEBBA-AB99-45B6-A1BF-EDDC7872598B}"
+      DTS:ObjectName="Excel Connection Manager 8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\кдз2 уд\exel\Teams.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 9]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B534D9A0-F437-47E3-9D10-DB2E3053BDC2}"
+      DTS:ObjectName="Excel Connection Manager 9">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\кдз2 уд\exel\Teams.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
@@ -808,29 +848,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Задача &quot;Выполнение SQL&quot;"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Задача &quot;Выполнение SQL&quot;"
-      DTS:DTSID="{318B88F0-15F6-420B-9578-25A352463CEF}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Задача &quot;Выполнение SQL&quot;"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{BCBEC6B9-7534-42A9-A9CD-D063C82C91E8}"
-          SQLTask:SqlStatementSource="delete from FactSalaries &#xA;delete from DimPlayers &#xA;delete from DimAwards &#xA;delete from DimManagers &#xA;delete from Teams" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Задача потока данных"
+      DTS:refId="Package\Загрузка игроков"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Задача потока данных"
       DTS:DTSID="{68F93DBC-412D-45F0-84E7-5F132D9E40F8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Задача потока данных"
+      DTS:ObjectName="Загрузка игроков"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -838,7 +862,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Задача потока данных\Выгрузка игроков"
+              refId="Package\Загрузка игроков\Выгрузка игроков"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Источник &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
               description="Источник &quot;Неструктурированный файл&quot;"
@@ -858,25 +882,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Задача потока данных\Выгрузка игроков.Connections[FlatFileConnection]"
+                  refId="Package\Загрузка игроков\Выгрузка игроков.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
                   connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+                  refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
                   name="Выход источника &quot;Неструктурированный файл&quot;">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[playerID]"
-                      codePage="1251"
-                      dataType="str"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[playerID]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Преобразование"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[playerID]"
+                      externalMetadataColumnId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[playerID]"
                       length="50"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[playerID]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[playerID]"
                       name="playerID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -891,14 +914,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[weight]"
-                      codePage="1251"
-                      dataType="str"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[weight]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Преобразование"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[weight]"
+                      externalMetadataColumnId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[weight]"
                       length="50"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[weight]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[weight]"
                       name="weight"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -913,14 +935,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[height]"
-                      codePage="1251"
-                      dataType="str"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[height]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Преобразование"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[height]"
+                      externalMetadataColumnId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[height]"
                       length="50"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[height]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[height]"
                       name="height"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -935,14 +956,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]"
-                      codePage="1251"
-                      dataType="str"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Преобразование"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[finalGame]"
+                      externalMetadataColumnId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[finalGame]"
                       length="50"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]"
                       name="finalGame"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -957,14 +977,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[debut]"
-                      codePage="1251"
-                      dataType="str"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[debut]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Преобразование"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[debut]"
+                      externalMetadataColumnId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[debut]"
                       length="50"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[debut]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[debut]"
                       name="debut"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -982,145 +1001,145 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[playerID]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[playerID]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="playerID" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthYear]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthYear]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="birthYear" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthMonth]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthMonth]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="birthMonth" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthDay]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthDay]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="birthDay" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthCountry]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthCountry]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="birthCountry" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthState]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthState]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="birthState" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthCity]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[birthCity]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="birthCity" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathYear]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathYear]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="deathYear" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathMonth]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathMonth]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="deathMonth" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathDay]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathDay]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="deathDay" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathCountry]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathCountry]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="deathCountry" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathState]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathState]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="deathState" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathCity]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[deathCity]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="deathCity" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[nameFirst]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[nameFirst]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="nameFirst" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[nameLast]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[nameLast]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="nameLast" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[nameGiven]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[nameGiven]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="nameGiven" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[weight]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[weight]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="weight" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[height]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[height]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="height" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[bats]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[bats]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="bats" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[throws]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[throws]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="throws" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[debut]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[debut]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="debut" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[finalGame]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[finalGame]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="finalGame" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[retroID]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[retroID]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="retroID" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[bbrefID]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[bbrefID]"
                       codePage="1251"
                       dataType="str"
                       length="50"
@@ -1128,27 +1147,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
+                  refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
                   isErrorOut="true"
                   name="Вывод ошибок источника &quot;Неструктурированный файл&quot;">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
                       codePage="1251"
                       dataType="text"
                       description="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
                       name="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;" />
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Задача потока данных\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      refId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1157,7 +1176,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Задача потока данных\Загрузка игроков"
+              refId="Package\Загрузка игроков\Загрузка игроков"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
               description="Назначение &quot;OLE DB&quot;"
@@ -1214,7 +1233,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Задача потока данных\Загрузка игроков.Connections[OleDbConnection]"
+                  refId="Package\Загрузка игроков\Загрузка игроков.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-4O8VT08.baseball_star]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-4O8VT08.baseball_star]"
                   description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
@@ -1222,77 +1241,73 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;]"
                   errorOrTruncationOperation="Вставить"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Вход назначения &quot;OLE DB&quot;">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[debut]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[debut]"
                       cachedDataType="dbDate"
                       cachedName="debut"
-                      externalMetadataColumnId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Debut]"
-                      lineageId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[debut]" />
+                      externalMetadataColumnId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Debut]"
+                      lineageId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[debut]" />
                     <inputColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[weight]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[weight]"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="weight"
-                      externalMetadataColumnId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Weight]"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[weight]" />
+                      externalMetadataColumnId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Weight]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[weight]" />
                     <inputColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[height]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[height]"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="height"
-                      externalMetadataColumnId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Height]"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[height]" />
+                      externalMetadataColumnId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Height]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[height]" />
                     <inputColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[playerID]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[playerID]"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="playerID"
-                      externalMetadataColumnId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BKPlayerID]"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[playerID]" />
+                      externalMetadataColumnId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BKPlayerID]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[playerID]" />
                     <inputColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[finalGame]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[finalGame]"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="finalGame"
-                      externalMetadataColumnId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[FinalGame]"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]" />
+                      externalMetadataColumnId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[FinalGame]"
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BKPlayerID]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BKPlayerID]"
                       codePage="1251"
                       dataType="str"
                       length="50"
                       name="BKPlayerID" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Weight]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Weight]"
                       dataType="i4"
                       name="Weight" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Height]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Height]"
                       dataType="i4"
                       name="Height" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[DWHPlayerID]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[DWHPlayerID]"
                       dataType="i4"
                       name="DWHPlayerID" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Debut]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Debut]"
                       dataType="dbDate"
                       name="Debut" />
                     <externalMetadataColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[FinalGame]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[FinalGame]"
                       dataType="dbDate"
                       name="FinalGame" />
                   </externalMetadataColumns>
@@ -1300,22 +1315,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Задача потока данных\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                  refId="Package\Загрузка игроков\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Вывод ошибок назначения &quot;OLE DB&quot;"
-                  synchronousInputId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                  synchronousInputId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Задача потока данных\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      lineageId="Package\Загрузка игроков\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Задача потока данных\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      refId="Package\Загрузка игроков\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Задача потока данных\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      lineageId="Package\Загрузка игроков\Загрузка игроков.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1324,7 +1339,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Задача потока данных\Преобразование данных"
+              refId="Package\Загрузка игроков\Преобразование данных"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Преобразование данных;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
               description="Преобразование данных"
@@ -1332,40 +1347,38 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]"
+                  refId="Package\Загрузка игроков\Преобразование данных.Inputs[Входные данные преобразования данных]"
                   name="Входные данные преобразования данных">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[finalGame]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
+                      refId="Package\Загрузка игроков\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[finalGame]"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="finalGame"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]" />
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[finalGame]" />
                     <inputColumn
-                      refId="Package\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[debut]"
-                      cachedCodepage="1251"
-                      cachedDataType="str"
+                      refId="Package\Загрузка игроков\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[debut]"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="debut"
-                      lineageId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[debut]" />
+                      lineageId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[debut]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных]"
+                  refId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные преобразования данных]"
                   exclusionGroup="1"
                   name="Выходные данные преобразования данных"
-                  synchronousInputId="Package\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]">
+                  synchronousInputId="Package\Загрузка игроков\Преобразование данных.Inputs[Входные данные преобразования данных]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[debut]"
+                      refId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[debut]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Преобразование"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[debut]"
+                      lineageId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[debut]"
                       name="debut"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1373,7 +1386,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Указывает входной столбец, служащий источником данных для преобразования."
-                          name="SourceInputColumnLineageID">#{Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника "Неструктурированный файл"].Columns[debut]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника "Неструктурированный файл"].Columns[debut]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
@@ -1381,11 +1394,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[finalGame]"
+                      refId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[finalGame]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Преобразование"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[finalGame]"
+                      lineageId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[finalGame]"
                       name="finalGame"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1393,7 +1406,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Указывает входной столбец, служащий источником данных для преобразования."
-                          name="SourceInputColumnLineageID">#{Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника "Неструктурированный файл"].Columns[finalGame]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника "Неструктурированный файл"].Columns[finalGame]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
@@ -1404,22 +1417,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных]"
+                  refId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Выходные данные ошибок преобразования данных"
-                  synchronousInputId="Package\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]">
+                  synchronousInputId="Package\Загрузка игроков\Преобразование данных.Inputs[Входные данные преобразования данных]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
+                      refId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
+                      lineageId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
+                      refId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
+                      lineageId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1430,17 +1443,724 @@
           </components>
           <paths>
             <path
-              refId="Package\Задача потока данных.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
-              endId="Package\Задача потока данных\Преобразование данных.Inputs[Входные данные преобразования данных]"
+              refId="Package\Загрузка игроков.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+              endId="Package\Загрузка игроков\Преобразование данных.Inputs[Входные данные преобразования данных]"
               name="Выход источника &quot;Неструктурированный файл&quot;"
-              startId="Package\Задача потока данных\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;]" />
+              startId="Package\Загрузка игроков\Выгрузка игроков.Outputs[Выход источника &quot;Неструктурированный файл&quot;]" />
             <path
-              refId="Package\Задача потока данных.Paths[Выходные данные преобразования данных]"
-              endId="Package\Задача потока данных\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;]"
+              refId="Package\Загрузка игроков.Paths[Выходные данные преобразования данных]"
+              endId="Package\Загрузка игроков\Загрузка игроков.Inputs[Вход назначения &quot;OLE DB&quot;]"
               name="Выходные данные преобразования данных"
-              startId="Package\Задача потока данных\Преобразование данных.Outputs[Выходные данные преобразования данных]" />
+              startId="Package\Загрузка игроков\Преобразование данных.Outputs[Выходные данные преобразования данных]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Загрузка команд"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{667A3749-99F1-43D4-8CBC-90F7F388C892}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Загрузка команд"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Загрузка команд\Загрузка команд"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+              description="Назначение &quot;OLE DB&quot;"
+              name="Загрузка команд"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[dbo].[Teams]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Загрузка команд\Загрузка команд.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-4O8VT08.baseball_star]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-4O8VT08.baseball_star]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  errorOrTruncationOperation="Вставить"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;OLE DB&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[lgID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="lgID"
+                      externalMetadataColumnId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LgID]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[lgID]" />
+                    <inputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Rank]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Rank"
+                      externalMetadataColumnId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Rank]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Rank]" />
+                    <inputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[W]"
+                      cachedDataType="r8"
+                      cachedName="W"
+                      externalMetadataColumnId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[W]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[W]" />
+                    <inputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[L]"
+                      cachedDataType="r8"
+                      cachedName="L"
+                      externalMetadataColumnId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[L]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[L]" />
+                    <inputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[Copy of yearID]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of yearID"
+                      externalMetadataColumnId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Year]"
+                      lineageId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[Copy of yearID]" />
+                    <inputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[teamID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="teamID"
+                      externalMetadataColumnId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BKTeamID]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[teamID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[DWHTeamID]"
+                      dataType="i4"
+                      name="DWHTeamID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Year]"
+                      dataType="dbDate"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[BKTeamID]"
+                      dataType="wstr"
+                      length="255"
+                      name="BKTeamID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[LgID]"
+                      dataType="wstr"
+                      length="255"
+                      name="LgID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[W]"
+                      dataType="i4"
+                      name="W" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[L]"
+                      dataType="i4"
+                      name="L" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[Rank]"
+                      dataType="wstr"
+                      length="255"
+                      name="Rank" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Загрузка команд\Загрузка команд.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                  synchronousInputId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка команд\Загрузка команд.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Загрузка команд.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка команд\Загрузка команд.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Загрузка команд\Источник &quot;Excel&quot;"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Источник &quot;Excel&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник &quot;Excel&quot;"
+              name="Источник &quot;Excel&quot;"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставление между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 9]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 9]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;]"
+                  name="Выход источника &quot;Excel&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[yearID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[yearID]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[yearID]"
+                      name="yearID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[lgID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[lgID]"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[lgID]"
+                      name="lgID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[teamID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[teamID]"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[teamID]"
+                      name="teamID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Rank]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Rank]"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[Rank]"
+                      name="Rank"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[W]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[W]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[W]"
+                      name="W"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[L]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[L]"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[L]"
+                      name="L"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[yearID]"
+                      dataType="wstr"
+                      length="255"
+                      name="yearID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[lgID]"
+                      dataType="wstr"
+                      length="255"
+                      name="lgID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[teamID]"
+                      dataType="wstr"
+                      length="255"
+                      name="teamID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[franchID]"
+                      dataType="wstr"
+                      length="255"
+                      name="franchID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[divID]"
+                      dataType="wstr"
+                      length="255"
+                      name="divID" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Rank]"
+                      dataType="wstr"
+                      length="255"
+                      name="Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[G]"
+                      dataType="wstr"
+                      length="255"
+                      name="G" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[Ghome]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ghome" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[W]"
+                      dataType="wstr"
+                      length="255"
+                      name="W" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[L]"
+                      dataType="wstr"
+                      length="255"
+                      name="L" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[DivWin]"
+                      dataType="wstr"
+                      length="255"
+                      name="DivWin" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[WCWin]"
+                      dataType="wstr"
+                      length="255"
+                      name="WCWin" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[LgWin]"
+                      dataType="wstr"
+                      length="255"
+                      name="LgWin" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[WSWin]"
+                      dataType="wstr"
+                      length="255"
+                      name="WSWin" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[R]"
+                      dataType="wstr"
+                      length="255"
+                      name="R" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[AB]"
+                      dataType="wstr"
+                      length="255"
+                      name="AB" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[H]"
+                      dataType="wstr"
+                      length="255"
+                      name="H" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[2B]"
+                      dataType="wstr"
+                      length="255"
+                      name="2B" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[3B]"
+                      dataType="wstr"
+                      length="255"
+                      name="3B" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[HR]"
+                      dataType="wstr"
+                      length="255"
+                      name="HR" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[BB]"
+                      dataType="wstr"
+                      length="255"
+                      name="BB" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SO]"
+                      dataType="wstr"
+                      length="255"
+                      name="SO" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SB]"
+                      dataType="wstr"
+                      length="255"
+                      name="SB" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[CS]"
+                      dataType="wstr"
+                      length="255"
+                      name="CS" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[HBP]"
+                      dataType="wstr"
+                      length="255"
+                      name="HBP" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SF]"
+                      dataType="wstr"
+                      length="255"
+                      name="SF" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[RA]"
+                      dataType="wstr"
+                      length="255"
+                      name="RA" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ER]"
+                      dataType="wstr"
+                      length="255"
+                      name="ER" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[ERA]"
+                      dataType="wstr"
+                      length="255"
+                      name="ERA" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[CG]"
+                      dataType="wstr"
+                      length="255"
+                      name="CG" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SHO]"
+                      dataType="wstr"
+                      length="255"
+                      name="SHO" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SV]"
+                      dataType="wstr"
+                      length="255"
+                      name="SV" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[IPouts]"
+                      dataType="wstr"
+                      length="255"
+                      name="IPouts" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[HA]"
+                      dataType="wstr"
+                      length="255"
+                      name="HA" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[HRA]"
+                      dataType="wstr"
+                      length="255"
+                      name="HRA" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[BBA]"
+                      dataType="wstr"
+                      length="255"
+                      name="BBA" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[SOA]"
+                      dataType="wstr"
+                      length="255"
+                      name="SOA" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[E]"
+                      dataType="wstr"
+                      length="255"
+                      name="E" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[DP]"
+                      dataType="wstr"
+                      length="255"
+                      name="DP" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[FP]"
+                      dataType="wstr"
+                      length="255"
+                      name="FP" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[park]"
+                      dataType="wstr"
+                      length="255"
+                      name="park" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[attendance]"
+                      dataType="wstr"
+                      length="255"
+                      name="attendance" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[BPF]"
+                      dataType="wstr"
+                      length="255"
+                      name="BPF" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[PPF]"
+                      dataType="wstr"
+                      length="255"
+                      name="PPF" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[teamIDBR]"
+                      dataType="wstr"
+                      length="255"
+                      name="teamIDBR" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[teamIDlahman45]"
+                      dataType="wstr"
+                      length="255"
+                      name="teamIDlahman45" />
+                    <externalMetadataColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].ExternalColumns[teamIDretro]"
+                      dataType="wstr"
+                      length="255"
+                      name="teamIDretro" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;Excel&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[yearID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[yearID]"
+                      name="yearID" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[lgID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[lgID]"
+                      name="lgID" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[teamID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[teamID]"
+                      name="teamID" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Rank]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[Rank]"
+                      name="Rank" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[W]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[W]"
+                      name="W" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[L]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Вывод ошибок источника &quot;Excel&quot;].Columns[L]"
+                      name="L" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Загрузка команд\Преобразование данных"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Преобразование данных;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+              description="Преобразование данных"
+              name="Преобразование данных"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Загрузка команд\Преобразование данных.Inputs[Входные данные преобразования данных]"
+                  name="Входные данные преобразования данных">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Загрузка команд\Преобразование данных.Inputs[Входные данные преобразования данных].Columns[yearID]"
+                      cachedDataType="r8"
+                      cachedName="yearID"
+                      lineageId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;].Columns[yearID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные преобразования данных]"
+                  exclusionGroup="1"
+                  name="Выходные данные преобразования данных"
+                  synchronousInputId="Package\Загрузка команд\Преобразование данных.Inputs[Входные данные преобразования данных]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[Copy of yearID]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные преобразования данных].Columns[Copy of yearID]"
+                      name="Copy of yearID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает входной столбец, служащий источником данных для преобразования."
+                          name="SourceInputColumnLineageID">#{Package\Загрузка команд\Источник "Excel".Outputs[Выход источника "Excel"].Columns[yearID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Выходные данные ошибок преобразования данных"
+                  synchronousInputId="Package\Загрузка команд\Преобразование данных.Inputs[Входные данные преобразования данных]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные ошибок преобразования данных].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Загрузка команд.Paths[Выход источника &quot;Excel&quot;]"
+              endId="Package\Загрузка команд\Преобразование данных.Inputs[Входные данные преобразования данных]"
+              name="Выход источника &quot;Excel&quot;"
+              startId="Package\Загрузка команд\Источник &quot;Excel&quot;.Outputs[Выход источника &quot;Excel&quot;]" />
+            <path
+              refId="Package\Загрузка команд.Paths[Выходные данные преобразования данных]"
+              endId="Package\Загрузка команд\Загрузка команд.Inputs[Вход назначения &quot;OLE DB&quot;]"
+              name="Выходные данные преобразования данных"
+              startId="Package\Загрузка команд\Преобразование данных.Outputs[Выходные данные преобразования данных]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Задача &quot;Выполнение SQL&quot;"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Задача &quot;Выполнение SQL&quot;"
+      DTS:DTSID="{318B88F0-15F6-420B-9578-25A352463CEF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача &quot;Выполнение SQL&quot;"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BCBEC6B9-7534-42A9-A9CD-D063C82C91E8}"
+          SQLTask:SqlStatementSource="delete from FactSalaries &#xA;delete from DimPlayers &#xA;delete from DimAwards &#xA;delete from DimManagers &#xA;delete from Teams" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1452,7 +2172,15 @@
       DTS:From="Package\Задача &quot;Выполнение SQL&quot;"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Задача потока данных" />
+      DTS:To="Package\Загрузка игроков" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9269BAB0-B77F-4C90-A25E-00B6F71ADD20}"
+      DTS:From="Package\Задача &quot;Выполнение SQL&quot;"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Загрузка команд" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1465,41 +2193,79 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="208,58"
           Id="Package\Задача &quot;Выполнение SQL&quot;"
           TopLeft="140.416664574295,6.06666655818621" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
-          Id="Package\Задача потока данных"
-          TopLeft="113.333331644535,93.1666650007169" />
+          Size="164,42.6666666666667"
+          Id="Package\Загрузка игроков"
+          TopLeft="34.9999994784593,94.8999983030558" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="244.416664574295,64.0666665581862">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-35.7499995964267,29.0999984425307"
+              EndConnector="-127.416665095836,30.8333317448696"
               Start="0,0"
-              End="-35.7499995964267,21.5999984425307">
+              End="-127.416665095836,23.3333317448696">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.5499992212653" />
+                    End="0,11.4166658724348" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.5499992212653"
-                    Point2="0,14.5499992212653"
-                    Point3="-4,14.5499992212653" />
+                    Point1="0,11.4166658724348"
+                    Point2="0,15.4166658724348"
+                    Point3="-4,15.4166658724348" />
                   <mssgle:LineSegment
-                    End="-31.7499995964267,14.5499992212653" />
+                    End="-123.416665095836,15.4166658724348" />
                   <mssgle:CubicBezierSegment
-                    Point1="-31.7499995964267,14.5499992212653"
-                    Point2="-35.7499995964267,14.5499992212653"
-                    Point3="-35.7499995964267,18.5499992212653" />
+                    Point1="-123.416665095836,15.4166658724348"
+                    Point2="-127.416665095836,15.4166658724348"
+                    Point3="-127.416665095836,19.4166658724348" />
                   <mssgle:LineSegment
-                    End="-35.7499995964267,21.5999984425307" />
+                    End="-127.416665095836,23.3333317448696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Загрузка команд"
+          TopLeft="236.58333014821,94.3333317448696" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="277.749997907628,64.0666665581862">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.4999989072485,30.2666651866834"
+              Start="0,0"
+              End="39.4999989072485,22.7666651866834">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.24529202209327" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.24529202209327"
+                    Point2="0,12.2452920220933"
+                    Point3="4,12.2452920220933" />
+                  <mssgle:LineSegment
+                    End="35.4999989072485,12.2452920220933" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.4999989072485,12.2452920220933"
+                    Point2="39.4999989072485,12.2452920220933"
+                    Point3="39.4999989072485,16.2452920220933" />
+                  <mssgle:LineSegment
+                    End="39.4999989072485,22.7666651866834" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1512,24 +2278,24 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Задача потока данных">
+    design-time-name="Package\Загрузка игроков">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
-          Id="Package\Задача потока данных\Преобразование данных"
+          Id="Package\Загрузка игроков\Преобразование данных"
           TopLeft="85.4166653938592,125.788887140288" />
         <NodeLayout
           Size="164,42.6666666666667"
-          Id="Package\Задача потока данных\Загрузка игроков"
+          Id="Package\Загрузка игроков\Загрузка игроков"
           TopLeft="49.5833325944841,269.855554008418" />
         <NodeLayout
           Size="166.666666666667,42.6666666666667"
-          Id="Package\Задача потока данных\Выгрузка игроков"
+          Id="Package\Загрузка игроков\Выгрузка игроков"
           TopLeft="159.166664294899,40.588888163103" />
         <EdgeLayout
-          Id="Package\Задача потока данных.Paths[Выходные данные преобразования данных]"
+          Id="Package\Загрузка игроков.Paths[Выходные данные преобразования данных]"
           TopLeft="185.749998727192,168.455553806954">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1563,7 +2329,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Задача потока данных.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+          Id="Package\Загрузка игроков.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
           TopLeft="242.499997628232,83.2555548297697">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1600,7 +2366,121 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Задача потока данных\Загрузка игроков">
+    design-time-name="Package\Загрузка игроков\Загрузка игроков">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Загрузка команд">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Загрузка команд\Источник &quot;Excel&quot;"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\Загрузка команд\Преобразование данных"
+          TopLeft="30.8333333333333,88.1666666666667" />
+        <EdgeLayout
+          Id="Package\Загрузка команд.Paths[Выход источника &quot;Excel&quot;]"
+          TopLeft="86.1666666666667,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45,40"
+              Start="0,0"
+              End="45,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="4,20" />
+                  <mssgle:LineSegment
+                    End="41,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41,20"
+                    Point2="45,20"
+                    Point3="45,24" />
+                  <mssgle:LineSegment
+                    End="45,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Загрузка команд\Загрузка команд"
+          TopLeft="28.8333333333334,171.5" />
+        <EdgeLayout
+          Id="Package\Загрузка команд.Paths[Выходные данные преобразования данных]"
+          TopLeft="131.166666666667,130.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.6666666666666,40.6666666666667"
+              Start="0,0"
+              End="-21.6666666666666,33.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.3333333333333"
+                    Point2="0,20.3333333333333"
+                    Point3="-4,20.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-17.6666666666666,20.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.6666666666666,20.3333333333333"
+                    Point2="-21.6666666666666,20.3333333333333"
+                    Point3="-21.6666666666666,24.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-21.6666666666666,33.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Загрузка команд\Источник &quot;Excel&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Загрузка команд\Загрузка команд">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
